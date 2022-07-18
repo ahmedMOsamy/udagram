@@ -16,20 +16,8 @@ jobs:
           name: Install Front-End Dependencies
           command: npm run frontend:install
       - run:
-          name: Front-End start
-          command: npm run frontend:start
-      - run:
           name: Front-End Build
           command: npm run frontend:build
-      - run:
-          name: Install Front-End test
-          command: npm run frontend:test
-      - run:
-          name: Install Front-End end 2 end test
-          command: npm run frontend:e2e
-      - run:
-          name: Install Front-End lint
-          command: npm run frontend:lint
       - run:
           name: Install Front-End deploy
           command: npm run frontend:deploy
@@ -40,11 +28,5 @@ jobs:
           name: Back-End Build
           command: npm run api:build
       - run:
-          name: Back-End start
-          command: npm run api:start
-      - run:
           name: Deploy Backend Application
           command: npm run api:deploy
-      - run:
-          name: Deploy Application
-          command: npm run deploy
