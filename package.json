@@ -11,10 +11,7 @@
         "api:build": "cd udagram/udagram-api && npm run build",
         "api:start": "cd udagram/udagram-api && npm run dev",
         "api:deploy": "cd udagram/udagram-api && npm run deploy",
-        "deploy": "npm run api:deploy && npm run frontend:deploy"
-    },
-    "dependencies": {
-        "npm": "^6.14.8",
-        "yarn": "^1.22.19"
+        "deploy": "npm run api:deploy && npm run frontend:deploy",
+        "api:test": "cd udagram/udagram-api && npm run test"
     }
 }
