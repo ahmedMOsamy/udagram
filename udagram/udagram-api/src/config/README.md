@@ -17,7 +17,7 @@ Endpoint
 uda-database.cpgwhjkcszik.us-east-1.rds.amazonaws.com
 Port
 5432
-postgres://postgres:postgres@database.cpgwhjkcszik.us-east-1.rds.amazonaws.com:5432/postgres
+postgres://postgres:postgres@database-1.cpgwhjkcszik.us-east-1.rds.amazonaws.com:5432/postgres
 
 Bucket website endpoint
 
@@ -29,16 +29,16 @@ admin-user
 
 Access key ID
 
-AKIAR6YE72MQDWQIWQWR
+AKIAR6YE72MQIFDCT66S
 
 Secret access key
 
-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
+oA4XhVO4J//oxk1L/XSbsLQ+kdjvNcMcL6otaqCT
 
 https://134765073184.signin.aws.amazon.com/console
 
 Udagram-api-dev
-http://udagram-api-dev.eba-preyp38b.us-east-1.elasticbeanstalk.com/
+http://udagram-api-dev.eba-guncmyh6.us-east-1.elasticbeanstalk.com/
 
 git hub token
 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

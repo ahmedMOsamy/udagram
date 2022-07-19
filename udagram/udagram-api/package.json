@@ -1,7 +1,6 @@
 {
     "name": "udagram-api",
     "version": "2.0.0",
-    "private": true,
     "engines": {
         "node": "14.15.1"
     },
@@ -12,9 +11,11 @@
         "dev": "npx ts-node-dev --respawn --transpile-only ./src/server.ts",
         "prod": "npx tsc && node ./www/server.js",
         "clean": "rm -rf www/ || true",
-        "deploy": "npm run build && eb list && eb use udagram-api-dev && eb deploy",
-        "build": "npm install . && npm run clean && tsc && cp -rf src/config www/config && cp -R .elasticbeanstalk www/.elasticbeanstalk && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "deploy_local": "npm run build && eb init udagram-api --region us-east-1 --platform node.js && eb use udagram-api-dev && eb deploy udagram-api-dev",
+        "deploy": "chmod +x bin/deploy.sh && bin/deploy.sh",
+        "build": "npm install . && npm run clean && tsc && cp -rf src/config www/config && cp -R .elasticbeanstalk www/.elasticbeanstalk && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && 7z a Archive.zip . && cd ..",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "set:env": "eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME POSTGRES_PASSWORD=$POSTGRES_PASSWORD POSTGRES_HOST=$POSTGRES_HOST DB_PORT=$DB_PORT POSTGRES_DB=$POSTGRES_DB AWS_REGION=$AWS_REGION AWS_PROFILE=$AWS_PROFILE JWT_SECRET=$JWT_SECRET AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY"
     },
     "keywords": [],
     "author": "Gabriel Ruttner",
