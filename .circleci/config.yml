@@ -33,23 +33,10 @@ jobs:
           command: npm run api:deploy
 
 workflows:
-  udagram:
+  build-and-deploy:
     jobs:
-      - build
-      - hold:
+      - build-and-deploy:
           filters:
             branches:
               only:
                 - master
-          type: approval
-          requires:
-            - build
-      - deploy
-      - hold:
-          filters:
-            branches:
-              only:
-                - master
-          type: approval
-          requires:
-            - deploy
